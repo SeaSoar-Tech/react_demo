@@ -1,9 +1,13 @@
 import HooksTest1 from "./HooksTest1";
 import HooksTest2 from "./HooksTest2";
-import { useState } from "react";
+import HooksTest3 from "./HooksTest3";
+import { useState, createContext } from "react";
 
 const delId = 1; //假设 index unknown, 是其他地方传进来的
 const nf = "apple"; //假设 fruit unknown, 是其他地方传进来的
+
+//不在同一文件 一定要export
+export const FruitsContext = createContext("initial fruits");
 
 function App() {
   const [fruits, setFruits] = useState(["apple", "pear", "berry"]); //假设是其他地方传进来的
@@ -26,47 +30,55 @@ function App() {
 
   //   const arr1 = ["apple", "pear", "berry"];
 
+
+  console.log(nf);
+
   return (
     <div className="App">
-      <h1>React App</h1>
+      <FruitsContext.Provider value={fruits}>
+        <h1>React App</h1>
 
-      {arr.map((item, _) => {
-        return item;
-      })}
-
-      <ul>
-        {fruits.map((item, index) => {
-          return (
-            <li key={index}>
-              {item}{" "}
-              {index === delId && (
-                <button
-                  className="del-btn"
-                  onClick={(e) => handleDel(index, e)}
-                >
-                  del
-                </button>
-              )}{" "}
-            </li>
-          );
+        {arr.map((item, _) => {
+          return item;
         })}
-      </ul>
 
-      <hr />
+        <ul>
+          {fruits.map((item, index) => {
+            return (
+              <li key={index}>
+                {item}{" "}
+                {index === delId && (
+                  <button
+                    className="del-btn"
+                    onClick={(e) => handleDel(index, e)}
+                  >
+                    del
+                  </button>
+                )}{" "}
+              </li>
+            );
+          })}
+        </ul>
 
-      <button className="add-btn" onClick={() => handleAdd(nf)}>
-        add &nbsp; {nf}
-      </button>
+        <hr />
 
-      <hr />
+        <button className="add-btn" onClick={() => handleAdd(nf)}>
+          add &nbsp; {nf}
+        </button>
 
-      <HooksTest1 />
+        <hr />
 
-      <hr />
-      
-      <HooksTest2 />
+        <HooksTest1 />
+
+        <hr />
+
+        <HooksTest2 />
+
+        <hr />
+
+        <HooksTest3 />
+      </FruitsContext.Provider>
     </div>
   );
 }
-
 export default App;
