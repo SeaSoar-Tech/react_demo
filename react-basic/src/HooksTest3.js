@@ -1,7 +1,7 @@
-
-// 这个是用来测试useContext 
 import {useContext } from 'react';
 import {FruitsContext} from './App.js'; //不是default export, 所以要用{}包裹
+
+// 这个是用来测试useContext hook
 
 function Child(params) {
 

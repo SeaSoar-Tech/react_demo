@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
+/*
 
+1. test useState hook
+
+
+*/
 function HooksTest1() {
   const [count, setCount] = useState(0);
   // Similar to componentDidMount and componentDidUpdate:

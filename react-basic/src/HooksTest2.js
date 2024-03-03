@@ -1,5 +1,10 @@
 import { useState, useEffect } from "react";
+/*
 
+test useEffect hook
+
+
+*/
 export default function HooksTest2() {
   //自己定义的  返回的 是 object 不是 array
   const [count, setCount] = useState(0);

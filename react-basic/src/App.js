@@ -31,7 +31,7 @@ function App() {
   //   const arr1 = ["apple", "pear", "berry"];
 
 
-  console.log(nf);
+//   console.log(nf);
 
   return (
     <div className="App">
