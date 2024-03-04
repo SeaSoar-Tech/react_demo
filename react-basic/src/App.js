@@ -1,7 +1,10 @@
 import HooksTest1 from "./HooksTest1";
 import HooksTest2 from "./HooksTest2";
 import HooksTest3 from "./HooksTest3";
+import ControlledComponentDemo from "./ControlledComponentDemo";
+
 import { useState, createContext } from "react";
+import _ from "lodash";
 
 const delId = 1; //假设 index unknown, 是其他地方传进来的
 const nf = "apple"; //假设 fruit unknown, 是其他地方传进来的
@@ -23,6 +26,10 @@ function App() {
     setFruits([...fruits, newFruit]);
   }
 
+  const handleSort = () => {
+    setFruits(_.orderBy(fruits, _, "desc"));
+  };
+
   const arr = [
     <p key="1">first</p>,
     <p key="2">second</p>,
@@ -31,8 +38,7 @@ function App() {
 
   //   const arr1 = ["apple", "pear", "berry"];
 
-
-//   console.log(nf);
+  //   console.log(nf);
 
   return (
     <div className="App">
@@ -42,7 +48,9 @@ function App() {
         {arr.map((item, _) => {
           return item;
         })}
+        <hr />
 
+        <button onClick={handleSort}> sort list </button>
         <ul>
           {fruits.map((item, index) => {
             return (
@@ -79,6 +87,9 @@ function App() {
 
         <HooksTest3 />
       </FruitsContext.Provider>
+      <hr />
+
+      <ControlledComponentDemo />
     </div>
   );
 }
