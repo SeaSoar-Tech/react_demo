@@ -18,6 +18,7 @@ function App() {
     setFruits(fruits.filter((item, i) => i !== index));
   };
 
+  // add usually use spread operator
   function handleAdd(newFruit) {
     setFruits([...fruits, newFruit]);
   }
