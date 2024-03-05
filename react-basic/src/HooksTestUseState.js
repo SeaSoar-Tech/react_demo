@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 
 */
-function HooksTest1() {
+function HooksTestUseState() {
   const [count, setCount] = useState(0);
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
@@ -21,4 +21,4 @@ function HooksTest1() {
   );
 }
 
-export default HooksTest1;
+export default HooksTestUseState;

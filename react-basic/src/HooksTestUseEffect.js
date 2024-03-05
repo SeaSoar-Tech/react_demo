@@ -5,7 +5,7 @@ test useEffect hook
 
 
 */
-export default function HooksTest2() {
+export default function HooksTestUseEffect() {
   //自己定义的  返回的 是 object 不是 array
   const [count, setCount] = useState(0);
   const [steps, setSteps] = useState(0);

@@ -19,7 +19,7 @@ function Child(params) {
 
 
 
-function HooksTest3() {
+function HooksTestUseContext() {
     
 
     return (<div>   
@@ -30,4 +30,4 @@ function HooksTest3() {
 }
 
 
-export default HooksTest3;
+export default HooksTestUseContext;

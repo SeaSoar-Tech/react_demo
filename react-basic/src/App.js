@@ -1,7 +1,11 @@
-import HooksTest1 from "./HooksTest1";
-import HooksTest2 from "./HooksTest2";
-import HooksTest3 from "./HooksTest3";
+import HooksTestUseState from "./HooksTestUseState";
+import HooksTestUseEffect from "./HooksTestUseEffect";
+import HooksTestUseContext from "./HooksTestUseContext";
 import ControlledComponentDemo from "./ControlledComponentDemo";
+import UncontrolledComponentDemo from "./UncontrolledComponentDemo";
+import HooksTestUseRef from "./HooksTestUseRef";
+import Form from "./ForwardRefTest";
+
 
 import { useState, createContext } from "react";
 import _ from "lodash";
@@ -77,19 +81,32 @@ function App() {
 
         <hr />
 
-        <HooksTest1 />
+        <HooksTestUseState />
 
         <hr />
 
-        <HooksTest2 />
+        <HooksTestUseEffect />
 
         <hr />
 
-        <HooksTest3 />
+        <HooksTestUseContext />
       </FruitsContext.Provider>
       <hr />
 
       <ControlledComponentDemo />
+
+      <hr />
+
+      <UncontrolledComponentDemo />
+
+        <hr />
+        <HooksTestUseRef/>  
+
+          <hr/>
+
+        <Form />
+
+
     </div>
   );
 }
