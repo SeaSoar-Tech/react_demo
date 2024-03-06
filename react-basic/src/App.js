@@ -6,6 +6,7 @@ import UncontrolledComponentDemo from "./UncontrolledComponentDemo";
 import HooksTestUseRef from "./HooksTestUseRef";
 import Form from "./ForwardRefTest";
 import CustomHookDemo from "./CustomHookDemo";
+import APITest from "./APITest";
 
 import { useState, createContext } from "react";
 import _ from "lodash";
@@ -46,6 +47,12 @@ function App() {
 
   return (
     <div className="App">
+
+
+      <APITest />
+
+      <hr />
+
       <FruitsContext.Provider value={fruits}>
         <h1>React App</h1>
 
@@ -91,6 +98,8 @@ function App() {
 
         <HooksTestUseContext />
       </FruitsContext.Provider>
+
+
       <hr />
 
       <ControlledComponentDemo />
@@ -99,17 +108,17 @@ function App() {
 
       <UncontrolledComponentDemo />
 
-        <hr />
-        <HooksTestUseRef/>  
+      <hr />
+      <HooksTestUseRef />
 
-          <hr/>
+      <hr />
 
-        <Form />
+      <Form />
 
+      <hr />
+      <CustomHookDemo />
 
-        <hr/>
-        <CustomHookDemo/>
-
+      
     </div>
   );
 }
