@@ -5,7 +5,7 @@ import ControlledComponentDemo from "./ControlledComponentDemo";
 import UncontrolledComponentDemo from "./UncontrolledComponentDemo";
 import HooksTestUseRef from "./HooksTestUseRef";
 import Form from "./ForwardRefTest";
-
+import CustomHookDemo from "./CustomHookDemo";
 
 import { useState, createContext } from "react";
 import _ from "lodash";
@@ -106,6 +106,9 @@ function App() {
 
         <Form />
 
+
+        <hr/>
+        <CustomHookDemo/>
 
     </div>
   );

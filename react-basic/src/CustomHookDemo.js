@@ -15,6 +15,7 @@ export default function CustomHookDemo() {
 
   return (
     <>
+      <h2> test custom hook demo</h2>
       <div>{flag && <p>CustomHookDemo</p>}</div>
       <button onClick={toggle}> toggle </button>
     </>
