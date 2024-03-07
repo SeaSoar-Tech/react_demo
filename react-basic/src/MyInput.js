@@ -10,7 +10,7 @@ const MyInput = forwardRef((props, ref)=>{
             {children}
             <div>default props {aa}</div>
             <label>{label}</label>
-            <input ref={ref} type="text" defaultValue={initialVal} />
+            <input ref={ref} type="text" placeholder={initialVal} />
         </div>
     )
 

@@ -19,6 +19,7 @@ export default function UncontrolledComponentDemo(){
         console.log(e.target);
         console.dir(inputRef.current)
         console.log(inputRef.current.value);
+        inputRef.current.value = "";
     }
 
     return (
