@@ -7,6 +7,7 @@ import HooksTestUseRef from "./HooksTestUseRef";
 import Form from "./ForwardRefTest";
 import CustomHookDemo from "./CustomHookDemo";
 import APITest from "./APITest";
+import ZustandDemo from "./ZustandDemo";    
 
 import { useState, createContext } from "react";
 import _ from "lodash";
@@ -47,7 +48,9 @@ function App() {
 
   return (
     <div className="App">
+      <ZustandDemo />
 
+      <hr />
 
       <APITest />
 

@@ -18,6 +18,8 @@ function Child(props) {
     </>
   );
 }
+
+// 这个是来测试 useContext 包含 object 的情况
 function GrandChild(props) {
   const {count, setCount}= useContext(objContext);
   return (

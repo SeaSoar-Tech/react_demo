@@ -41,8 +41,8 @@ export default function APITest() {
   //use axios to get data from server
   const handleLoadData2 = () => {
     setLoading(true);
-    // getList();
-    sleep2(fetchData, 2000);
+    getList();
+    // sleep2(fetchData, 2000);
 
   };
 
