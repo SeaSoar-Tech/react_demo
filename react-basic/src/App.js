@@ -1,3 +1,6 @@
+import { useState, createContext } from "react";
+import _ from "lodash";
+
 import HooksTestUseState from "./HooksTestUseState";
 import HooksTestUseEffect from "./HooksTestUseEffect";
 import HooksTestUseContext from "./HooksTestUseContext";
@@ -8,9 +11,11 @@ import Form from "./ForwardRefTest";
 import CustomHookDemo from "./CustomHookDemo";
 import APITest from "./APITest";
 import ZustandDemo from "./ZustandDemo";    
+import HooksTestUseReducer from "./HooksTestUseReducer";
 
-import { useState, createContext } from "react";
-import _ from "lodash";
+
+
+
 
 const delId = 1; //假设 index unknown, 是其他地方传进来的
 const nf = "apple"; //假设 fruit unknown, 是其他地方传进来的
@@ -48,6 +53,10 @@ function App() {
 
   return (
     <div className="App">
+
+    <HooksTestUseReducer/>
+    <hr/>
+
       <ZustandDemo />
 
       <hr />
