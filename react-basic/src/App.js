@@ -12,6 +12,7 @@ import CustomHookDemo from "./CustomHookDemo";
 import APITest from "./APITest";
 import ZustandDemo from "./ZustandDemo";    
 import HooksTestUseReducer from "./HooksTestUseReducer";
+import HooksTestUseMemo from "./HooksTestUseMemo";
 
 
 
@@ -53,6 +54,9 @@ function App() {
 
   return (
     <div className="App">
+
+    <HooksTestUseMemo/>
+    <hr/>
 
     <HooksTestUseReducer/>
     <hr/>
