@@ -13,7 +13,7 @@ import APITest from "./APITest";
 import ZustandDemo from "./ZustandDemo";    
 import HooksTestUseReducer from "./HooksTestUseReducer";
 import HooksTestUseMemo from "./HooksTestUseMemo";
-
+import HooksTestUseCallback from "./HooksTestUseCallback";
 
 
 
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-
+        
     <HooksTestUseMemo/>
     <hr/>
 
