@@ -19,7 +19,7 @@ const delId = 1; //假设 index unknown, 是其他地方传进来的
 const nf = "apple"; //假设 fruit unknown, 是其他地方传进来的
 
 //不在同一文件 一定要export
-export const FruitsContext = createContext("initial fruits");
+export const FruitsContext = createContext([]);
 
 function App() {
   const [fruits, setFruits] = useState(["apple", "pear", "berry"]); //假设是其他地方传进来的
@@ -51,17 +51,20 @@ function App() {
 
   return (
     <div className="App">
-      <HooksTestUseMemo />
-      <hr />
+      <FruitsContext.Provider value={{arr:fruits, setArr: setFruits}}>
+        <HooksTestUseMemo />
+        <hr />
+      </FruitsContext.Provider>
 
       <HooksTestUseReducer />
       <hr />
 
-      <ZustandDemo />
-
-      <hr />
       {flag ? (
         <>
+          <ZustandDemo />
+
+          <hr />
+
           <APITest />
 
           <hr />

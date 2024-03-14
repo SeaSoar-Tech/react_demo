@@ -21,7 +21,7 @@ function Child(props) {
 
 // 这个是来测试 useContext 包含 object 的情况
 function GrandChild(props) {
-  const {count, setCount}= useContext(objContext);
+  const {count, setCount}= useContext(ObjContext);
   return (
     <div>
         <p>{`In the grandchild level ->  show count: ${count}`}</p>
@@ -30,19 +30,19 @@ function GrandChild(props) {
   );
 }
 
-const objContext = createContext(null);
+const ObjContext = createContext(null);
 function HooksTestUseContext() {
   const [count, setCount] = useState(0);
 
   return (
-    <objContext.Provider value={{ count, setCount }}>
+    <ObjContext.Provider value={{ count, setCount }}>
       <div>
         <h2>useContext example</h2>
         <p>{`In the grandfather level -> show count: ${count}`}</p>
         <button onClick={() => setCount(count - 1)}>decrement</button>
         <Child />
       </div>
-    </objContext.Provider>
+    </ObjContext.Provider>
   );
 }
 
