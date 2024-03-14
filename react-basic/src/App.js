@@ -13,7 +13,7 @@ import APITest from "./APITest";
 import ZustandDemo from "./ZustandDemo";    
 import HooksTestUseReducer from "./HooksTestUseReducer";
 import HooksTestUseMemo from "./HooksTestUseMemo";
-import HooksTestUseCallback from "./HooksTestUseCallback";
+import HooksTestUseMemo from "./HooksTestUseMemo";
 
 
 
