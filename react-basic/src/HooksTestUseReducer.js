@@ -1,6 +1,8 @@
 import  { useReducer } from "react";
+/*
+用于测试useReducer， 这个hook 类似 useState， 但能包含 更为复杂的 state 和 改变状态的 方法
 
-
+*/
 function reducer(state, action) {
   switch (action.type) {
     case "inc":

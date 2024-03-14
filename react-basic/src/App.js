@@ -10,14 +10,11 @@ import HooksTestUseRef from "./HooksTestUseRef";
 import Form from "./ForwardRefTest";
 import CustomHookDemo from "./CustomHookDemo";
 import APITest from "./APITest";
-import ZustandDemo from "./ZustandDemo";    
+import ZustandDemo from "./ZustandDemo";
 import HooksTestUseReducer from "./HooksTestUseReducer";
 import HooksTestUseMemo from "./HooksTestUseMemo";
-import HooksTestUseMemo from "./HooksTestUseMemo";
 
-
-
-
+const flag = false; // to hide some content
 const delId = 1; //假设 index unknown, 是其他地方传进来的
 const nf = "apple"; //假设 fruit unknown, 是其他地方传进来的
 
@@ -54,87 +51,86 @@ function App() {
 
   return (
     <div className="App">
-        
-    <HooksTestUseMemo/>
-    <hr/>
+      <HooksTestUseMemo />
+      <hr />
 
-    <HooksTestUseReducer/>
-    <hr/>
+      <HooksTestUseReducer />
+      <hr />
 
       <ZustandDemo />
 
       <hr />
+      {flag ? (
+        <>
+          <APITest />
 
-      <APITest />
+          <hr />
 
-      <hr />
+          <FruitsContext.Provider value={fruits}>
+            <h1>React App</h1>
 
-      <FruitsContext.Provider value={fruits}>
-        <h1>React App</h1>
+            {arr.map((item, _) => {
+              return item;
+            })}
+            <hr />
 
-        {arr.map((item, _) => {
-          return item;
-        })}
-        <hr />
+            <button onClick={handleSort}> sort list </button>
+            <ul>
+              {fruits.map((item, index) => {
+                return (
+                  <li key={index}>
+                    {item}{" "}
+                    {index === delId && (
+                      <button
+                        className="del-btn"
+                        onClick={(e) => handleDel(index, e)}
+                      >
+                        del
+                      </button>
+                    )}{" "}
+                  </li>
+                );
+              })}
+            </ul>
 
-        <button onClick={handleSort}> sort list </button>
-        <ul>
-          {fruits.map((item, index) => {
-            return (
-              <li key={index}>
-                {item}{" "}
-                {index === delId && (
-                  <button
-                    className="del-btn"
-                    onClick={(e) => handleDel(index, e)}
-                  >
-                    del
-                  </button>
-                )}{" "}
-              </li>
-            );
-          })}
-        </ul>
+            <hr />
 
-        <hr />
+            <button className="add-btn" onClick={() => handleAdd(nf)}>
+              add &nbsp; {nf}
+            </button>
 
-        <button className="add-btn" onClick={() => handleAdd(nf)}>
-          add &nbsp; {nf}
-        </button>
+            <hr />
 
-        <hr />
+            <HooksTestUseState />
 
-        <HooksTestUseState />
+            <hr />
 
-        <hr />
+            <HooksTestUseEffect />
 
-        <HooksTestUseEffect />
+            <hr />
 
-        <hr />
+            <HooksTestUseContext />
+          </FruitsContext.Provider>
 
-        <HooksTestUseContext />
-      </FruitsContext.Provider>
+          <hr />
 
+          <ControlledComponentDemo />
 
-      <hr />
+          <hr />
 
-      <ControlledComponentDemo />
+          <UncontrolledComponentDemo />
 
-      <hr />
+          <hr />
+          <HooksTestUseRef />
 
-      <UncontrolledComponentDemo />
+          <hr />
 
-      <hr />
-      <HooksTestUseRef />
+          <Form />
 
-      <hr />
-
-      <Form />
-
-      <hr />
-      <CustomHookDemo />
-
-      
+          <hr />
+          <CustomHookDemo />
+        </>
+      ) : null}
     </div>
   );
 }
