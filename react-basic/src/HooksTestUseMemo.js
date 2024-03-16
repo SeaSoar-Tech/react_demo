@@ -1,5 +1,7 @@
 import { useMemo, useState, useContext } from "react";
 import { FruitsContext } from "./App.js";
+import MemoComponent from "./MemoComponent.js";
+
 /*
 
 useMemo 可以cache 变量，component， 函数 (相当于useCallBack)
@@ -72,8 +74,14 @@ export default function HooksTestUseMemo() {
       <button onClick={addApple}> add apple to fruits array</button>
       {children}
 
-      {/* 如果不用Memo 包一下的话，即使number 是const 也会每次跟着 父组件 rerender */}
+      {/* 如果不用Memo 包一下的话，即使number 是const 也会每次跟着 父组件 rerender , 和MemoComponent 进行对比 */}
       <Child2 num={number} />
+    
+
+
+      <MemoComponent num={number} />
+
+
     </div>
   );
 }
