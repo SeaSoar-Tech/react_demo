@@ -1,2 +1,2 @@
-# This a demo for all basic usage of react hooks
+# This a repo for all basics of react.js
 
