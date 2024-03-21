@@ -1,0 +1,43 @@
+{
+  "Comment": "A description of my state machine",
+  "StartAt": "ProcessTransactions",
+  "States": {
+    "ProcessTransactions": {
+      "Type": "Choice",
+
+      "Choices": [
+        {
+          "Variable": "$.TransactionType",
+          "StringEquals": "PURCHASE",
+          "Next": "ProcessPurchase"
+        },
+        {
+            "Variable": "$.TransactionType",
+            "StringEquals": "REFUND",
+            "Next": "ProcessRefund"
+          }
+      ]
+    },
+
+    "ProcessRefund": {
+        "Type" :"Task",
+        "Resource": "arn:aws:lambda:us-west-2:905418484293:function:ProcessRefund",
+        "End": true
+    },
+
+    "ProcessPurchase": {
+        "Type" :"Task",
+        "Resource": "arn:aws:lambda:us-west-2:905418484293:function:ProcessPurchase",
+        "End": true
+
+    }
+  }
+}
+
+//test
+{
+"TransactionType": "PURCHASE"
+}
+{
+    "TransactionType": "REFUND"
+}
