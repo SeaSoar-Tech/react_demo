@@ -13,6 +13,7 @@ import APITest from "./APITest";
 import ZustandDemo from "./ZustandDemo";
 import HooksTestUseReducer from "./HooksTestUseReducer";
 import HooksTestUseMemo from "./HooksTestUseMemo";
+import ReduxDemo from "./ReduxDemo";
 
 const flag = false; // to hide some content
 const delId = 1; //假设 index unknown, 是其他地方传进来的
@@ -51,7 +52,10 @@ function App() {
 
   return (
     <div className="App">
-      <FruitsContext.Provider value={{arr:fruits, setArr: setFruits}}>
+      <ReduxDemo />
+
+      <hr />
+      <FruitsContext.Provider value={{ arr: fruits, setArr: setFruits }}>
         <HooksTestUseMemo />
         <hr />
       </FruitsContext.Provider>
