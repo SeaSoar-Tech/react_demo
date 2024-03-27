@@ -9,6 +9,8 @@ export const createBearsStore = (set) => {
         console.log(state);
         return { bears: state.bears + 1 };
       }),
+
     removeAll: () => set({ bears: 0 }),
+    
   };
 };

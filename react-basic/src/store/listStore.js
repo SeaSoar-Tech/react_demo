@@ -1,5 +1,8 @@
 const url = "http://localhost:3004/data";
 
+
+// async demo for zustand
+
 const sleep = () => {
   return new Promise((resolve) => setTimeout(resolve, 2000));
 };
