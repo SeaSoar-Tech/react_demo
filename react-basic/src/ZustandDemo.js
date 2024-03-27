@@ -1,5 +1,5 @@
 // import { useBrearStore , useFetchDataStore, useStore} from "./zustandStores"
-import useStore from "./store/index.js";
+import useStore from "./store_zustand/index.js";
 
 import { useEffect } from "react";
 export default function ZustandDemo() {
