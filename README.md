@@ -1,1 +1,1 @@
-### This is the demo for various react functionalities.
+### This is the demo for various react projects.
