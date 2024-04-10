@@ -50,7 +50,7 @@ export const incrementAsync = (amount) => {
     /*
     这里的 1s 和 css file里的 1s 配合
     transition: width 1s linear, opacity 0.5s ease 1s;
-    
+    要改 时间的话  一起改
     */
     setTimeout(() => {
       dispatch(incrementByAmount(amount));
@@ -58,8 +58,8 @@ export const incrementAsync = (amount) => {
   };
 };
 
-// console.log("counterSlice.reducer: " + counterSlice.reducer);
-// console.log("counterSlice.actions: " + counterSlice.actions);
+console.log("counterSlice.reducer: " + counterSlice.reducer);
+console.log("counterSlice.actions: " + counterSlice.actions);
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
 export default counterSlice.reducer;
