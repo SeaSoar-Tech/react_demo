@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   decrement,
@@ -9,6 +9,8 @@ import {
 
 import styles from "./styles/ReduxDemo.module.css";
 
+import { fetchList } from "./store_redux/modules/channelSlice";
+
 /*
 redux demo:
 1. counter: sync and async button
@@ -18,11 +20,25 @@ redux demo:
 export default function ReduxDemo() {
   const [incrementAmount, setIncrementAmount] = useState(0);
   const dispatch = useDispatch();
-  const count = useSelector((state)=>state.counter.value)
+  // state.whichSlice.whichState
+  const count = useSelector((state) => state.counter.value);
+  const list = useSelector((state) => state.channel.list);
 
+
+  useEffect(() => {
+    dispatch(fetchList());
+  }, [dispatch]);
 
   return (
     <>
+      <h2>redux demo0: channel async pull data</h2>
+      <ul>
+        {list.map((item) => (
+          <li key={item.id}> {JSON.stringify(item)} </li>
+        ))}
+      </ul>
+
+      <hr />
       <h2>redux demo1: counter</h2>
       <div className={styles.row}>
         <button
@@ -55,7 +71,7 @@ export default function ReduxDemo() {
         <button
           className={styles.button}
           onClick={() =>
-            // defensive coding： 这里的input可能会输入 其他字符，Number(incrementAmount) 尝试转换，失败的话 就用0
+            // defensive coding： 这里的input可能会输入 其他字符，Number(incrementAmount) 尝试转换，失败的话->NAN,  就用0
             dispatch(incrementByAmount(Number(incrementAmount) || 0))
           }
         >
@@ -68,7 +84,6 @@ export default function ReduxDemo() {
         >
           Add Async
         </button>
-
       </div>
     </>
   );
