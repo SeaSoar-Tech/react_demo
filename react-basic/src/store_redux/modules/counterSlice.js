@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const counterSlice = createSlice({
+    //这里名字无所谓，反正default export，index.js里面的名字重要
   name: "counter",
   initialState: {
     value: 0,
@@ -29,8 +30,9 @@ const counterSlice = createSlice({
 //   }, 1000);
 // };
 
+// redux的 异步函数(异步 action creator) 要单独拿出来封装一个，返回一个 异步action函数(不是同步action对象)
+// zustand 异步可以直接 写在store的方法里面
 export const incrementAsync = (amount) => {
-  
   
   /*
   1.getState.whichSlice.whichState
@@ -38,6 +40,7 @@ export const incrementAsync = (amount) => {
 
   2. (dispatch, getState) 这2个参数是 Thunk 默认插入的
   */
+    // 这里没加async 是因为 该函数里面没异步请求行为
     return (dispatch, getState) => {
 
 
@@ -51,6 +54,8 @@ export const incrementAsync = (amount) => {
     这里的 1s 和 css file里的 1s 配合
     transition: width 1s linear, opacity 0.5s ease 1s;
     要改 时间的话  一起改
+
+    异步 action creator里面 调用同步 action creator 设置状态
     */
     setTimeout(() => {
       dispatch(incrementByAmount(amount));
