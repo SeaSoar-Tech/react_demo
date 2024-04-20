@@ -18,6 +18,7 @@ export const createListStore = (set) => {
           throw new Error("network error");
         }
         console.log(response);
+        // convet to json obj also needs await
         const data = await response.json();
         console.log(data);
         set({ list: data });
